@@ -8,6 +8,6 @@ new File("input.txt").eachLine{ line->
         sum+=(line as int)
     }
 }
-def topThree=list.sort().reverse(true).subList(0,3).sum()
+def topThree=list.sort().reverse()[0..2].sum()
 println "calories of top three: $topThree"
 
