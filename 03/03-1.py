@@ -5,16 +5,18 @@ def inBoth(line):
     for c in line[0:half]:
         if (compartment2.find(c)>=0):
             return c
-            
-sum = 0     
+    
+def getValue(char):
+    if char >= 'a':
+        return ord(char) - ord('a') + 1
+    else:
+        return  ord(char) - ord('A') + 27
+    
+sum = 0
 with open('input.txt', 'r') as input:
     for line in input:
         char = inBoth(line)
-        print(f"{char} {ord(char)} {ord('a')}")
-        if char >= 'a':
-            sum+= ord(char) - ord('a') + 1
-        else:
-            sum+= ord(char) - ord('A') + 27
+        sum += getValue(char)
 
 print(f"sum of priorities: {sum}")
 
